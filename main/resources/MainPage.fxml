@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="heroPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sharingpresetmusik.controller.MainPageController">
+   <children>
+      <!-- Hero Section -->
+      <VBox layoutX="20.0" layoutY="20.0" prefHeight="100.0" prefWidth="760.0" spacing="10.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label fx:id="usernameLabel" text="Username" />
+                  <Label fx:id="avatarLabel" text="AV" />
+               </children>
+            </HBox>
+            <TextField fx:id="searchField" onAction="#handleSearch" prefWidth="400.0" promptText="Search presets..." />
+            <HBox spacing="10.0">
+               <children>
+                  <Button fx:id="filterAll" onAction="#handleFilter" text="All" />
+                  <Button fx:id="filterNew" onAction="#handleFilter" text="New" />
+                  <Button fx:id="filterTop" onAction="#handleFilter" text="Top rated" />
+               </children>
+            </HBox>
+            <Label fx:id="totalCount" text="0 presets" />
+         </children>
+      </VBox>
+
+      <!-- Content Area -->
+      <ScrollPane layoutX="20.0" layoutY="140.0" prefHeight="440.0" prefWidth="760.0">
+         <content>
+            <VBox fx:id="contentArea" spacing="20.0" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

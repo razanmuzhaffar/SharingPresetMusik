@@ -1,0 +1,319 @@
+/* ═══════════════════════════════════════════
+   SharingPreset — Swiss Design System
+   JavaFX CSS
+═══════════════════════════════════════════ */
+
+.root {
+    -fx-font-family: "IBM Plex Mono", "Courier New", monospace;
+    -fx-background-color: #f4f1ec;
+    -fx-font-size: 12px;
+}
+
+/* ── SCROLLPANE ── */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+.scroll-pane .scroll-bar:vertical {
+    -fx-pref-width: 4px;
+}
+.scroll-pane .scroll-bar .thumb {
+    -fx-background-color: #cdc9c3;
+    -fx-background-radius: 0;
+}
+.scroll-pane .scroll-bar .track {
+    -fx-background-color: transparent;
+}
+.scroll-pane .scroll-bar .increment-button,
+.scroll-pane .scroll-bar .decrement-button {
+    -fx-pref-height: 0;
+    -fx-pref-width: 0;
+}
+
+/* ── HERO ── */
+.hero-pane {
+    -fx-background-color: #0f0e0d;
+    -fx-min-height: 180px;
+    -fx-max-height: 180px;
+    -fx-pref-height: 180px;
+}
+.hero-title {
+    -fx-font-family: "IBM Plex Sans Condensed", "IBM Plex Mono", monospace;
+    -fx-font-size: 26px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #f4f1ec;
+}
+.hero-version {
+    -fx-font-size: 9px;
+    -fx-font-weight: 700;
+    -fx-text-fill: rgba(255,255,255,0.35);
+    -fx-letter-spacing: 0.18em;
+}
+
+/* ── SEARCH BAR ── */
+.search-field {
+    -fx-background-color: rgba(255,255,255,0.1);
+    -fx-border-color: rgba(255,255,255,0.2);
+    -fx-border-width: 1;
+    -fx-text-fill: #f4f1ec;
+    -fx-prompt-text-fill: rgba(255,255,255,0.35);
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 11px;
+    -fx-pref-height: 38px;
+    -fx-padding: 0 12px;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+}
+
+/* ── BUTTONS ── */
+.btn-upload-hero {
+    -fx-background-color: #c8281e;
+    -fx-text-fill: white;
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 10px;
+    -fx-font-weight: 700;
+    -fx-pref-height: 38px;
+    -fx-padding: 0 16px;
+    -fx-background-radius: 0;
+    -fx-cursor: hand;
+    -fx-letter-spacing: 0.1em;
+}
+.btn-upload-hero:hover {
+    -fx-background-color: #e03030;
+}
+
+.btn-upload-main {
+    -fx-background-color: #0f0e0d;
+    -fx-text-fill: #f4f1ec;
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 10px;
+    -fx-font-weight: 700;
+    -fx-pref-height: 32px;
+    -fx-padding: 0 14px;
+    -fx-background-radius: 0;
+    -fx-cursor: hand;
+}
+.btn-upload-main:hover {
+    -fx-background-color: #3a3836;
+}
+
+.btn-filter {
+    -fx-background-color: transparent;
+    -fx-border-color: #cdc9c3;
+    -fx-border-width: 1;
+    -fx-text-fill: #6b6762;
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 10px;
+    -fx-pref-height: 32px;
+    -fx-padding: 0 12px;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-cursor: hand;
+}
+.btn-filter:hover {
+    -fx-border-color: #0f0e0d;
+    -fx-text-fill: #0f0e0d;
+}
+.btn-filter-active {
+    -fx-background-color: transparent;
+    -fx-border-color: #0f0e0d;
+    -fx-border-width: 1;
+    -fx-text-fill: #0f0e0d;
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 10px;
+    -fx-pref-height: 32px;
+    -fx-padding: 0 12px;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-cursor: hand;
+}
+
+/* ── USER CHIP ── */
+.user-chip {
+    -fx-background-color: transparent;
+    -fx-border-color: rgba(255,255,255,0.2);
+    -fx-border-width: 1;
+    -fx-pref-height: 38px;
+    -fx-padding: 0 10px;
+    -fx-cursor: hand;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+}
+.user-chip:hover {
+    -fx-border-color: rgba(255,255,255,0.5);
+}
+.user-avatar {
+    -fx-background-color: #c8281e;
+    -fx-min-width: 24px;
+    -fx-max-width: 24px;
+    -fx-min-height: 24px;
+    -fx-max-height: 24px;
+}
+.user-avatar-label {
+    -fx-text-fill: white;
+    -fx-font-size: 9px;
+    -fx-font-weight: 700;
+}
+.username-label {
+    -fx-text-fill: rgba(255,255,255,0.8);
+    -fx-font-size: 10px;
+}
+
+/* ── ACTIONS ROW ── */
+.actions-row {
+    -fx-background-color: #ece9e3;
+    -fx-border-color: transparent transparent #d3d0ca transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 10px 20px;
+    -fx-min-height: 52px;
+    -fx-max-height: 52px;
+}
+
+/* ── CATEGORY SECTION ── */
+.category-header {
+    -fx-border-color: transparent transparent #0f0e0d transparent;
+    -fx-border-width: 0 0 1.5 0;
+    -fx-padding: 0 0 8 0;
+}
+.category-dot-synth  { -fx-background-color: #c8281e; }
+.category-dot-guitar { -fx-background-color: #1a5c3a; }
+.category-dot-bass   { -fx-background-color: #1a2f5c; }
+.category-name {
+    -fx-font-size: 11px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #0f0e0d;
+}
+.category-count {
+    -fx-font-size: 10px;
+    -fx-text-fill: #9e9990;
+}
+.btn-see-all {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #6b6762;
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 9px;
+    -fx-font-weight: 700;
+    -fx-cursor: hand;
+    -fx-padding: 0;
+}
+.btn-see-all:hover {
+    -fx-text-fill: #0f0e0d;
+}
+
+/* ── PRESET CARD ── */
+.preset-card {
+    -fx-background-color: white;
+    -fx-border-color: #e8e4de;
+    -fx-border-width: 1;
+    -fx-padding: 12;
+    -fx-cursor: hand;
+}
+.preset-card:hover {
+    -fx-border-color: #9e9990;
+}
+.preset-card-new {
+    -fx-background-color: white;
+    -fx-border-color: #c8281e #e8e4de #e8e4de #e8e4de;
+    -fx-border-width: 2 1 1 1;
+    -fx-padding: 12;
+    -fx-cursor: hand;
+}
+.preset-card-new:hover {
+    -fx-border-color: #c8281e #9e9990 #9e9990 #9e9990;
+}
+.preset-name {
+    -fx-font-size: 11px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #0f0e0d;
+    -fx-wrap-text: true;
+}
+.preset-author {
+    -fx-font-size: 9px;
+    -fx-text-fill: #9e9990;
+}
+.badge-new {
+    -fx-background-color: #c8281e;
+    -fx-text-fill: white;
+    -fx-font-size: 8px;
+    -fx-font-weight: 700;
+    -fx-padding: 2 6 2 6;
+}
+
+/* ── TAG CHIP ── */
+.tag-chip {
+    -fx-background-color: transparent;
+    -fx-border-color: #cdc9c3;
+    -fx-border-width: 1;
+    -fx-text-fill: #6b6762;
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 8px;
+    -fx-font-weight: 700;
+    -fx-padding: 2 6 2 6;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-cursor: hand;
+}
+.tag-chip:hover {
+    -fx-border-color: #0f0e0d;
+    -fx-text-fill: #0f0e0d;
+}
+
+/* ── PLAY / DOWNLOAD BUTTONS ── */
+.btn-play-mini {
+    -fx-background-color: #f4f1ec;
+    -fx-border-color: #cdc9c3;
+    -fx-border-width: 1;
+    -fx-text-fill: #6b6762;
+    -fx-font-size: 9px;
+    -fx-min-width: 24px;
+    -fx-max-width: 24px;
+    -fx-min-height: 24px;
+    -fx-max-height: 24px;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-cursor: hand;
+    -fx-padding: 0;
+}
+.btn-play-mini:hover {
+    -fx-background-color: #0f0e0d;
+    -fx-text-fill: white;
+    -fx-border-color: #0f0e0d;
+}
+.btn-download {
+    -fx-background-color: #0f0e0d;
+    -fx-text-fill: #f4f1ec;
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 8px;
+    -fx-font-weight: 700;
+    -fx-padding: 3 8 3 8;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-cursor: hand;
+}
+.btn-download:hover {
+    -fx-background-color: #c8281e;
+}
+
+/* ── STAR RATING ── */
+.star-filled {
+    -fx-text-fill: #c8281e;
+    -fx-font-size: 11px;
+}
+.star-empty {
+    -fx-text-fill: #cdc9c3;
+    -fx-font-size: 11px;
+}
+
+/* ── MISC ── */
+.count-label {
+    -fx-font-size: 9px;
+    -fx-text-fill: #9e9990;
+}
+.content-area {
+    -fx-background-color: #f4f1ec;
+    -fx-padding: 24 20 24 20;
+}
