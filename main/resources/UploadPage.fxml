@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="uploadapp.UploadController"
+      stylesheets="@upload-styles.css"
+      prefWidth="560" prefHeight="400"
+      spacing="0"
+      styleClass="root-container">
+
+    <!-- ═══ NAVBAR ═══ -->
+    <HBox fx:id="navbar"
+          styleClass="navbar"
+          alignment="CENTER_LEFT"
+          prefHeight="44"
+          spacing="0">
+
+        <!-- Logo -->
+        <Label fx:id="logoLabel"
+               text="LOGO"
+               styleClass="nav-logo"
+               prefWidth="80"
+               prefHeight="44" />
+
+        <!-- Spacer kiri -->
+        <Region HBox.hgrow="ALWAYS" />
+
+        <!-- Search Bar -->
+        <TextField fx:id="searchField"
+                   promptText="Search Bar"
+                   styleClass="nav-search"
+                   prefWidth="160"
+                   prefHeight="28" />
+
+        <!-- Spacer kanan -->
+        <Region HBox.hgrow="ALWAYS" />
+
+        <!-- Profile Photo Circle -->
+        <StackPane styleClass="profile-circle"
+                   prefWidth="32" prefHeight="32">
+               <HBox.margin>
+                   <Insets right="14"/>
+               </HBox.margin>
+            <Circle fx:id="profileCircle"
+                    radius="16"
+                    styleClass="profile-circle-shape" />
+            <Label text="N"
+                   styleClass="profile-initial" />
+        </StackPane>
+
+    </HBox>
+
+    <!-- ═══ PAGE CONTENT ═══ -->
+    <VBox styleClass="page-content"
+          spacing="16"
+          VBox.vgrow="ALWAYS">
+
+        <padding>
+            <Insets top="20" right="24" bottom="24" left="24"/>
+        </padding>
+
+        <!-- Page Title -->
+        <Label text="Upload Preset"
+               styleClass="page-title" />
+
+        <!-- ═══ FORM CARD ═══ -->
+        <VBox styleClass="form-card"
+              spacing="0">
+
+            <!-- Row 1: Nama Preset + Genre -->
+            <HBox styleClass="form-row" spacing="0">
+
+                <!-- Nama Preset -->
+                <VBox styleClass="form-field field-left"
+                      spacing="5"
+                      HBox.hgrow="ALWAYS">
+                    <Label text="NAMA PRESET"
+                           styleClass="field-label" />
+                    <TextField fx:id="namaPresetField"
+                               promptText="Masukkan nama preset..."
+                               styleClass="field-input" />
+                </VBox>
+
+                <!-- Divider vertikal -->
+                <Separator orientation="VERTICAL"
+                           styleClass="field-divider-v" />
+
+                <!-- Genre -->
+                <VBox styleClass="form-field field-right"
+                      spacing="5"
+                      HBox.hgrow="ALWAYS">
+                    <Label text="GENRE"
+                           styleClass="field-label" />
+                    <ComboBox fx:id="genreCombo"
+                              promptText="Pilih genre..."
+                              styleClass="field-combo"
+                              maxWidth="Infinity" />
+                </VBox>
+
+            </HBox>
+
+            <!-- Divider horizontal -->
+            <Separator styleClass="field-divider-h" />
+
+            <!-- Row 2: Jenis Instrument + Tipe Preset -->
+            <HBox styleClass="form-row" spacing="0">
+
+                <!-- Jenis Instrument -->
+                <VBox styleClass="form-field field-left"
+                      spacing="5"
+                      HBox.hgrow="ALWAYS">
+                    <Label text="JENIS INSTRUMENT"
+                           styleClass="field-label" />
+                    <ComboBox fx:id="jenisInstrumentCombo"
+                              promptText="Pilih instrument..."
+                              styleClass="field-combo"
+                              maxWidth="Infinity" />
+                </VBox>
+
+                <!-- Divider vertikal -->
+                <Separator orientation="VERTICAL"
+                           styleClass="field-divider-v" />
+
+                <!-- Tipe Preset -->
+                <VBox styleClass="form-field field-right"
+                      spacing="5"
+                      HBox.hgrow="ALWAYS">
+                    <Label text="TIPE PRESET"
+                           styleClass="field-label" />
+                    <ComboBox fx:id="tipePresetCombo"
+                              promptText="Pilih tipe..."
+                              styleClass="field-combo"
+                              maxWidth="Infinity" />
+                </VBox>
+
+            </HBox>
+
+        </VBox>
+
+        <!-- ═══ DROP ZONE ═══ -->
+        <StackPane fx:id="dropZone"
+                   styleClass="drop-zone"
+                   prefHeight="80"
+                   onDragOver="#handleDragOver"
+                   onDragDropped="#handleDragDropped"
+                   onMouseClicked="#handleDropZoneClick">
+            <VBox alignment="CENTER" spacing="6">
+                <Label text="⬆"
+                       styleClass="drop-icon" />
+                <Label fx:id="dropLabel"
+                       text="Drop File / Demo Preview"
+                       styleClass="drop-text" />
+                <Label text=".fxp • .vstpreset • .mp3 • .wav"
+                       styleClass="drop-sub" />
+            </VBox>
+        </StackPane>
+
+        <!-- Spacer -->
+        <Region VBox.vgrow="ALWAYS" />
+
+        <!-- ═══ ACTION BUTTONS ═══ -->
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <Button fx:id="cancelBtn"
+                    text="BATAL"
+                    styleClass="btn-secondary"
+                    onAction="#handleCancel"
+                    prefHeight="36" prefWidth="100" />
+            <Button fx:id="uploadBtn"
+                    text="UPLOAD ↑"
+                    styleClass="btn-primary"
+                    onAction="#handleUpload"
+                    prefHeight="36" prefWidth="120" />
+        </HBox>
+
+    </VBox>
+
+</VBox>

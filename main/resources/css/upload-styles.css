@@ -1,0 +1,271 @@
+/* ═══════════════════════════════════════════════════
+   JFXD — Upload Page Styles
+   Swiss Design System | IBM Plex Family
+   ═══════════════════════════════════════════════════ */
+
+/* ── Root ── */
+.root-container {
+    -fx-background-color: #f4f1ec;
+    -fx-font-family: "IBM Plex Sans";
+}
+
+/* ════════════════════════
+   NAVBAR
+════════════════════════ */
+.navbar {
+    -fx-background-color: #0f0e0d;
+    -fx-border-color: transparent transparent #0f0e0d transparent;
+    -fx-border-width: 0 0 1.5 0;
+    -fx-padding: 0 14 0 0;
+    -fx-min-height: 44px;
+    -fx-pref-height: 44px;
+    -fx-max-height: 44px;
+}
+
+.nav-logo {
+    -fx-font-family: "IBM Plex Sans Condensed";
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-text-fill: #f4f1ec;
+    -fx-letter-spacing: 0.15em;
+    -fx-text-transform: uppercase;
+    -fx-background-color: #1c1b1a;
+    -fx-border-color: transparent #3a3836 transparent transparent;
+    -fx-border-width: 0 1 0 0;
+    -fx-padding: 0 16 0 16;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.nav-search {
+    -fx-font-family: "IBM Plex Mono";
+    -fx-font-size: 10px;
+    -fx-background-color: #1c1b1a;
+    -fx-text-fill: #cdc9c3;
+    -fx-prompt-text-fill: #6b6762;
+    -fx-border-color: #3a3836;
+    -fx-border-width: 1;
+    -fx-padding: 0 10 0 10;
+    -fx-pref-height: 28px;
+}
+
+.nav-search:focused {
+    -fx-border-color: #9e9990;
+}
+
+/* Profile Circle */
+.profile-circle-shape {
+    -fx-fill: #3a3836;
+    -fx-stroke: #6b6762;
+    -fx-stroke-width: 1;
+}
+
+.profile-initial {
+    -fx-font-family: "IBM Plex Mono";
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f4f1ec;
+}
+
+/* ════════════════════════
+   PAGE CONTENT
+════════════════════════ */
+.page-content {
+    -fx-background-color: #f4f1ec;
+}
+
+.page-title {
+    -fx-font-family: "IBM Plex Sans Condensed";
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f0e0d;
+    -fx-letter-spacing: 0.05em;
+}
+
+/* ════════════════════════
+   FORM CARD
+════════════════════════ */
+.form-card {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #9e9990;
+    -fx-border-width: 1.5;
+}
+
+.form-row {
+    -fx-pref-height: 80px;
+    -fx-min-height: 80px;
+}
+
+.form-field {
+    -fx-padding: 14 16 14 16;
+}
+
+.field-left {
+    /* left field — no extra border needed */
+}
+
+.field-right {
+    /* right field */
+}
+
+.field-divider-v {
+    -fx-orientation: VERTICAL;
+    -fx-background-color: #9e9990;
+    -fx-border-color: #9e9990;
+    -fx-pref-width: 1.5;
+    -fx-min-width: 1.5;
+    -fx-max-width: 1.5;
+    -fx-padding: 0;
+}
+
+.field-divider-h {
+    -fx-background-color: #9e9990;
+    -fx-border-color: #9e9990;
+    -fx-pref-height: 1.5;
+    -fx-min-height: 1.5;
+    -fx-max-height: 1.5;
+    -fx-padding: 0;
+}
+
+.field-label {
+    -fx-font-family: "IBM Plex Mono";
+    -fx-font-size: 8px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #6b6762;
+    -fx-letter-spacing: 0.15em;
+}
+
+.field-input {
+    -fx-font-family: "IBM Plex Mono";
+    -fx-font-size: 11px;
+    -fx-background-color: transparent;
+    -fx-text-fill: #0f0e0d;
+    -fx-prompt-text-fill: #cdc9c3;
+    -fx-border-color: transparent transparent #e8e4de transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 0 0 4 0;
+}
+
+.field-input:focused {
+    -fx-border-color: transparent transparent #0f0e0d transparent;
+}
+
+.field-combo {
+    -fx-font-family: "IBM Plex Mono";
+    -fx-font-size: 11px;
+    -fx-background-color: transparent;
+    -fx-text-fill: #0f0e0d;
+    -fx-prompt-text-fill: #cdc9c3;
+    -fx-border-color: transparent transparent #e8e4de transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 0;
+}
+
+.field-combo:focused,
+.field-combo:showing {
+    -fx-border-color: transparent transparent #0f0e0d transparent;
+}
+
+.field-combo .list-cell {
+    -fx-font-family: "IBM Plex Mono";
+    -fx-font-size: 11px;
+    -fx-text-fill: #0f0e0d;
+    -fx-background-color: #ffffff;
+    -fx-padding: 6 10;
+}
+
+.field-combo .list-cell:selected {
+    -fx-background-color: #0f0e0d;
+    -fx-text-fill: #f4f1ec;
+}
+
+/* ════════════════════════
+   DROP ZONE
+════════════════════════ */
+.drop-zone {
+    -fx-border-color: #9e9990;
+    -fx-border-width: 2;
+    -fx-border-style: dashed;
+    -fx-background-color: #fafafa;
+    -fx-cursor: hand;
+    -fx-background-radius: 0;
+}
+
+.drop-zone:hover {
+    -fx-border-color: #0f0e0d;
+    -fx-background-color: #f4f1ec;
+}
+
+.drop-zone-active {
+    -fx-border-color: #c8281e;
+    -fx-background-color: #fdf0ef;
+}
+
+.drop-icon {
+    -fx-font-size: 18px;
+    -fx-text-fill: #6b6762;
+}
+
+.drop-text {
+    -fx-font-family: "IBM Plex Mono";
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f0e0d;
+    -fx-letter-spacing: 0.08em;
+}
+
+.drop-sub {
+    -fx-font-family: "IBM Plex Mono";
+    -fx-font-size: 8px;
+    -fx-text-fill: #9e9990;
+    -fx-letter-spacing: 0.05em;
+}
+
+/* ════════════════════════
+   BUTTONS
+════════════════════════ */
+.btn-primary {
+    -fx-font-family: "IBM Plex Mono";
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f4f1ec;
+    -fx-background-color: #0f0e0d;
+    -fx-border-color: #0f0e0d;
+    -fx-border-width: 1.5;
+    -fx-cursor: hand;
+    -fx-letter-spacing: 0.1em;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+}
+
+.btn-primary:hover {
+    -fx-background-color: #c8281e;
+    -fx-border-color: #c8281e;
+}
+
+.btn-primary:pressed {
+    -fx-background-color: #a01e16;
+    -fx-border-color: #a01e16;
+}
+
+.btn-secondary {
+    -fx-font-family: "IBM Plex Mono";
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3a3836;
+    -fx-background-color: transparent;
+    -fx-border-color: #9e9990;
+    -fx-border-width: 1.5;
+    -fx-cursor: hand;
+    -fx-letter-spacing: 0.1em;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+}
+
+.btn-secondary:hover {
+    -fx-border-color: #0f0e0d;
+    -fx-text-fill: #0f0e0d;
+}
+
+.btn-secondary:pressed {
+    -fx-background-color: #e8e4de;
+}
