@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.sharingpresetmusic.PresetCardController"
+      styleClass="preset-card"
+      prefWidth="380"
+      spacing="8">
+
+    <!-- Baris atas: tombol play + judul -->
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Button fx:id="playButton" text="▶" styleClass="play-btn" onAction="#handlePlay"/>
+        <Label fx:id="titleLabel" text="Judul Preset" styleClass="preset-title"/>
+    </HBox>
+
+    <!-- Progress audio -->
+    <Slider fx:id="audioSlider" styleClass="audio-slider" prefWidth="340" disable="true"/>
+
+    <!-- Tanggal -->
+    <Label fx:id="dateLabel" text="tanggal" styleClass="preset-date"/>
+
+    <!-- Tag genre, tipe, instrumen -->
+    <HBox spacing="8" styleClass="preset-tags">
+        <Label fx:id="genreTag" text="Genre" styleClass="tag tag-genre"/>
+        <Label fx:id="typeTag" text="Tipe" styleClass="tag tag-type"/>
+        <Label fx:id="instrumentTag" text="Instrumen" styleClass="tag tag-instrument"/>
+    </HBox>
+
+</VBox>
