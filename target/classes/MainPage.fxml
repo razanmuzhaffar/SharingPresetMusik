@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.sharingpresetmusik.controller.MainPageController"
+      stylesheets="@css/style.css"
+      spacing="0"
+      prefWidth="900" prefHeight="700">
+
+   <!-- ═══ NAVBAR ═══ -->
+   <HBox alignment="CENTER_LEFT"
+         styleClass="navbar"
+         spacing="12">
+
+      <!-- Logo -->
+      <Label text="PresetMusik"
+             styleClass="logo-text"
+             onMouseClicked="#handleLogoClick"/>
+
+      <!-- Spacer kiri -->
+      <Region HBox.hgrow="ALWAYS"/>
+
+      <!-- Search -->
+      <TextField fx:id="searchField"
+                 promptText="Cari preset..."
+                 prefWidth="260"
+                 styleClass="search-bar"
+                 onAction="#handleSearch"/>
+
+      <!-- Upload -->
+      <Button text="Upload"
+              styleClass="btn-primary"
+              onAction="#handleUpload"/>
+
+      <!-- Spacer kanan -->
+      <Region HBox.hgrow="ALWAYS"/>
+
+      <!-- Logout -->
+      <Button text="Logout"
+              styleClass="btn-secondary"
+              onAction="#handleLogout"/>
+
+      <!-- Profile circle -->
+      <StackPane onMouseClicked="#handleProfile"
+                 style="-fx-cursor: hand;">
+         <HBox.margin><Insets left="8" right="4"/></HBox.margin>
+         <Circle fx:id="profileCircle"
+                 radius="16"
+                 fill="#C4261C"/>
+         <Label fx:id="profileInitial"
+                text="?"
+                styleClass="user-avatar-label"/>
+      </StackPane>
+
+   </HBox>
+
+   <!-- ═══ CONTENT (di-swap per halaman) ═══ -->
+   <StackPane fx:id="contentArea" VBox.vgrow="ALWAYS"/>
+
+</VBox>

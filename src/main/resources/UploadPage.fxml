@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.sharingpresetmusik.controller.UploadController"
+      stylesheets="@css/style.css"
+      styleClass="page-content"
+      spacing="0"
+      prefWidth="560" prefHeight="520">
+
+    <VBox VBox.vgrow="ALWAYS" spacing="16">
+        <padding><Insets top="24" right="24" bottom="24" left="24"/></padding>
+
+        <!-- Page Title -->
+        <Label text="Upload Preset" styleClass="page-title"/>
+
+        <!-- ═══ FORM CARD ═══ -->
+        <VBox styleClass="form-card" spacing="0">
+
+            <!-- Row 1: Nama Preset | Genre -->
+            <HBox styleClass="form-row" spacing="0">
+
+                <VBox styleClass="form-field" spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="NAMA PRESET" styleClass="field-label"/>
+                    <TextField fx:id="namaPresetField"
+                               promptText="Masukkan nama preset..."
+                               styleClass="field-input"/>
+                </VBox>
+
+                <Region styleClass="field-divider-v" minWidth="1" maxWidth="1"/>
+
+                <VBox styleClass="form-field" spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="GENRE" styleClass="field-label"/>
+                    <ComboBox fx:id="genreCombo"
+                              promptText="Pilih genre..."
+                              styleClass="field-combo"
+                              maxWidth="Infinity"/>
+                </VBox>
+
+            </HBox>
+
+            <Region styleClass="field-divider-h" minHeight="1" maxHeight="1"/>
+
+            <!-- Row 2: Jenis Instrument | Tipe Preset -->
+            <HBox styleClass="form-row" spacing="0">
+
+                <VBox styleClass="form-field" spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="JENIS INSTRUMENT" styleClass="field-label"/>
+                    <ComboBox fx:id="jenisInstrumentCombo"
+                              promptText="Pilih instrument..."
+                              styleClass="field-combo"
+                              maxWidth="Infinity"/>
+                </VBox>
+
+                <Region styleClass="field-divider-v" minWidth="1" maxWidth="1"/>
+
+                <VBox styleClass="form-field" spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="TIPE PRESET" styleClass="field-label"/>
+                    <ComboBox fx:id="tipePresetCombo"
+                              promptText="Pilih tipe..."
+                              styleClass="field-combo"
+                              maxWidth="Infinity"/>
+                </VBox>
+
+            </HBox>
+
+        </VBox>
+
+        <!-- ═══ DROP ZONE — FILE PRESET ═══ -->
+        <StackPane fx:id="dropZone"
+                   styleClass="drop-zone"
+                   prefHeight="90"
+                   onDragOver="#handleDragOver"
+                   onDragDropped="#handleDragDropped"
+                   onMouseClicked="#handleDropZoneClick">
+
+            <VBox alignment="CENTER" spacing="5">
+                <Label text="⬆" styleClass="drop-icon"/>
+                <Label fx:id="dropLabel"
+                       text="Drop file preset atau klik untuk pilih"
+                       styleClass="drop-text"/>
+                <Label text=".vital · .prst · .fxp · .vstpreset · .nmsv · .adv · .sf2 · .syx · dan lainnya"
+                       styleClass="drop-sub"/>
+            </VBox>
+
+        </StackPane>
+
+        <!-- ═══ DROP ZONE — FILE DEMO AUDIO (opsional) ═══ -->
+        <Label text="FILE DEMO (opsional)" styleClass="field-label"/>
+        <StackPane fx:id="demoDropZone"
+                   styleClass="drop-zone"
+                   prefHeight="72"
+                   onDragOver="#handleDemoDragOver"
+                   onDragDropped="#handleDemoDragDropped"
+                   onMouseClicked="#handleDemoDropZoneClick">
+
+            <VBox alignment="CENTER" spacing="4">
+                <Label text="🎵" styleClass="drop-icon"/>
+                <Label fx:id="demoDropLabel"
+                       text="Drop audio demo atau klik untuk pilih"
+                       styleClass="drop-text"/>
+                <Label text=".mp3 · .wav · .ogg · .flac"
+                       styleClass="drop-sub"/>
+            </VBox>
+
+        </StackPane>
+
+        <!-- Spacer -->
+        <Region VBox.vgrow="ALWAYS"/>
+
+        <!-- ═══ ACTIONS ═══ -->
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <Button fx:id="cancelBtn"
+                    text="BATAL"
+                    styleClass="btn-secondary"
+                    onAction="#handleCancel"
+                    prefHeight="36" prefWidth="100"/>
+            <Button fx:id="uploadBtn"
+                    text="UPLOAD ↑"
+                    styleClass="btn-primary"
+                    onAction="#handleUpload"
+                    prefHeight="36" prefWidth="120"/>
+        </HBox>
+
+    </VBox>
+
+</VBox>

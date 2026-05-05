@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.sharingpresetmusik.controller.ProfileController"
+            stylesheets="@css/style.css"
+            prefWidth="900" prefHeight="700">
+
+    <!-- ═══ KONTEN UTAMA ═══ -->
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="scroll-pane">
+
+            <VBox spacing="24" styleClass="main-content">
+
+                <!-- KARTU PROFIL -->
+                <HBox styleClass="profile-card"
+                      spacing="24"
+                      alignment="CENTER_LEFT">
+
+                    <!-- Avatar -->
+                    <StackPane styleClass="profile-image-container">
+                        <ImageView fx:id="profileImage"
+                                   fitWidth="100" fitHeight="100"
+                                   preserveRatio="true"/>
+                    </StackPane>
+
+                    <!-- Info -->
+                    <VBox spacing="10" HBox.hgrow="ALWAYS">
+                        <Label fx:id="usernameLabel"
+                               text="Username"
+                               styleClass="username-label"/>
+
+                        <HBox spacing="0" styleClass="stats-row">
+                            <VBox alignment="CENTER_LEFT" styleClass="stat-box">
+                                <Label fx:id="followersCount"
+                                       text="0"
+                                       styleClass="stat-number"/>
+                                <Label text="FOLLOWERS" styleClass="stat-label"/>
+                            </VBox>
+                            <VBox alignment="CENTER_LEFT" styleClass="stat-box">
+                                <HBox.margin><Insets left="20"/></HBox.margin>
+                                <Label fx:id="followingCount"
+                                       text="0"
+                                       styleClass="stat-number"/>
+                                <Label text="FOLLOWING" styleClass="stat-label"/>
+                            </VBox>
+                            <VBox alignment="CENTER_LEFT" styleClass="stat-box">
+                                <HBox.margin><Insets left="20"/></HBox.margin>
+                                <Label fx:id="presetCount"
+                                       text="0"
+                                       styleClass="stat-number"/>
+                                <Label text="PRESET" styleClass="stat-label"/>
+                            </VBox>
+                        </HBox>
+                    </VBox>
+
+                </HBox>
+
+                <!-- PRESET SECTION -->
+                <VBox spacing="16">
+                    <Label text="Presets" styleClass="section-title"/>
+                    <FlowPane fx:id="presetGrid"
+                              hgap="16" vgap="16"
+                              styleClass="preset-grid"
+                              prefWrapLength="840"/>
+                </VBox>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+
+    <!-- ═══ AUDIO BAR BAWAH ═══ -->
+    <bottom>
+        <HBox fx:id="audioPlayerBar"
+              styleClass="audio-bar"
+              alignment="CENTER_LEFT"
+              spacing="12"
+              visible="false">
+
+            <Button fx:id="stopButton"
+                    text="■"
+                    styleClass="stop-btn"
+                    onAction="#handleStop"/>
+
+            <Label fx:id="nowPlayingLabel"
+                   text="Tidak ada yang diputar"
+                   styleClass="now-playing"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Slider fx:id="progressSlider"
+                    prefWidth="200"
+                    styleClass="progress-slider"/>
+
+            <Button text="← Kembali"
+                    onAction="#handleCancel"
+                    styleClass="btn-secondary"/>
+
+        </HBox>
+    </bottom>
+
+</BorderPane>

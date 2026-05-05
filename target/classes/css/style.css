@@ -1,0 +1,906 @@
+/* ═══════════════════════════════════════════════════════
+   SHARINGPRESETMUSIK — Swiss Editorial Design System
+   JavaFX CSS
+
+   PALETTE
+   ─────────────────────────────
+   cream    #F2EFE9   background utama
+   ink      #111110   teks & elemen dominan
+   surface  #E8E4DD   surface sekunder
+   border   #D4CFC7   garis / separator
+   mist     #9C9890   placeholder & helper text
+   ash      #6A6760   label & secondary text
+   red      #C4261C   aksen / CTA
+   red-hi   #DC3B31   hover red
+   white    #FFFFFF   card surface
+   ─────────────────────────────
+═══════════════════════════════════════════════════════ */
+
+/* ══════════════════════════════
+   1. ROOT & RESET
+══════════════════════════════ */
+.root {
+    -fx-font-family: "IBM Plex Mono", "Courier New", monospace;
+    -fx-font-size: 12px;
+    -fx-background-color: #F2EFE9;
+}
+
+/* ══════════════════════════════
+   2. SCROLLPANE
+══════════════════════════════ */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+.scroll-pane .scroll-bar:vertical {
+    -fx-pref-width: 5px;
+    -fx-background-color: transparent;
+}
+.scroll-pane .scroll-bar:horizontal {
+    -fx-pref-height: 5px;
+    -fx-background-color: transparent;
+}
+.scroll-pane .scroll-bar .thumb {
+    -fx-background-color: #D4CFC7;
+    -fx-background-radius: 0;
+}
+.scroll-pane .scroll-bar .track,
+.scroll-pane .scroll-bar .track-background {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+.scroll-pane .scroll-bar .increment-button,
+.scroll-pane .scroll-bar .decrement-button {
+    -fx-pref-height: 0;
+    -fx-pref-width: 0;
+    -fx-opacity: 0;
+}
+.scroll-pane .corner {
+    -fx-background-color: transparent;
+}
+
+/* ══════════════════════════════
+   3. NAVBAR
+══════════════════════════════ */
+.navbar {
+    -fx-background-color: #111110;
+    -fx-min-height: 52px;
+    -fx-max-height: 52px;
+    -fx-pref-height: 52px;
+    -fx-padding: 0 24px;
+    -fx-border-color: transparent transparent #1C1B1A transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.logo-text {
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #F2EFE9;
+    -fx-cursor: hand;
+    -fx-letter-spacing: 0.05em;
+}
+.logo-text:hover {
+    -fx-text-fill: white;
+}
+
+.search-bar {
+    -fx-background-color: rgba(255,255,255,0.07);
+    -fx-border-color: rgba(255,255,255,0.15);
+    -fx-border-width: 1;
+    -fx-text-fill: #F2EFE9;
+    -fx-prompt-text-fill: rgba(255,255,255,0.30);
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 11px;
+    -fx-pref-height: 34px;
+    -fx-padding: 0 12px;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+}
+.search-bar:focused {
+    -fx-background-color: rgba(255,255,255,0.11);
+    -fx-border-color: rgba(255,255,255,0.40);
+}
+
+.nav-profile-image {
+    -fx-cursor: hand;
+}
+
+/* ══════════════════════════════
+   4. BUTTONS
+══════════════════════════════ */
+
+/* Primary — ink fill */
+.btn-primary {
+    -fx-background-color: #111110;
+    -fx-text-fill: #F2EFE9;
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 10px;
+    -fx-font-weight: 700;
+    -fx-pref-height: 36px;
+    -fx-padding: 0 18px;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-cursor: hand;
+}
+.btn-primary:hover {
+    -fx-background-color: #2E2D2B;
+}
+.btn-primary:pressed {
+    -fx-background-color: #C4261C;
+}
+
+/* Secondary — outlined */
+.btn-secondary {
+    -fx-background-color: transparent;
+    -fx-border-color: #D4CFC7;
+    -fx-border-width: 1;
+    -fx-text-fill: #6A6760;
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 10px;
+    -fx-font-weight: 700;
+    -fx-pref-height: 36px;
+    -fx-padding: 0 16px;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-cursor: hand;
+}
+.btn-secondary:hover {
+    -fx-border-color: #111110;
+    -fx-text-fill: #111110;
+}
+
+/* Red CTA */
+.btn-red {
+    -fx-background-color: #C4261C;
+    -fx-text-fill: white;
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 10px;
+    -fx-font-weight: 700;
+    -fx-pref-height: 36px;
+    -fx-padding: 0 18px;
+    -fx-background-radius: 0;
+    -fx-cursor: hand;
+}
+.btn-red:hover {
+    -fx-background-color: #DC3B31;
+}
+
+/* Filter pill */
+.btn-filter {
+    -fx-background-color: transparent;
+    -fx-border-color: #D4CFC7;
+    -fx-border-width: 1;
+    -fx-text-fill: #6A6760;
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 9px;
+    -fx-font-weight: 700;
+    -fx-pref-height: 28px;
+    -fx-padding: 0 10px;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-cursor: hand;
+}
+.btn-filter:hover {
+    -fx-border-color: #111110;
+    -fx-text-fill: #111110;
+}
+.btn-filter-active {
+    -fx-background-color: #111110;
+    -fx-border-color: #111110;
+    -fx-border-width: 1;
+    -fx-text-fill: #F2EFE9;
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 9px;
+    -fx-font-weight: 700;
+    -fx-pref-height: 28px;
+    -fx-padding: 0 10px;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-cursor: hand;
+}
+
+/* Play / stop mini */
+.btn-play-mini {
+    -fx-background-color: #F2EFE9;
+    -fx-border-color: #D4CFC7;
+    -fx-border-width: 1;
+    -fx-text-fill: #6A6760;
+    -fx-font-size: 9px;
+    -fx-min-width: 28px;
+    -fx-max-width: 28px;
+    -fx-min-height: 28px;
+    -fx-max-height: 28px;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-cursor: hand;
+    -fx-padding: 0;
+    -fx-alignment: CENTER;
+}
+.btn-play-mini:hover {
+    -fx-background-color: #111110;
+    -fx-border-color: #111110;
+    -fx-text-fill: white;
+}
+
+.play-btn {
+    -fx-background-color: #F2EFE9;
+    -fx-border-color: #D4CFC7;
+    -fx-border-width: 1;
+    -fx-text-fill: #6A6760;
+    -fx-font-size: 9px;
+    -fx-min-width: 28px;
+    -fx-max-width: 28px;
+    -fx-min-height: 28px;
+    -fx-max-height: 28px;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-cursor: hand;
+    -fx-padding: 0;
+    -fx-alignment: CENTER;
+}
+.play-btn:hover {
+    -fx-background-color: #111110;
+    -fx-border-color: #111110;
+    -fx-text-fill: white;
+}
+
+.stop-btn {
+    -fx-background-color: #C4261C;
+    -fx-border-color: #C4261C;
+    -fx-border-width: 1;
+    -fx-text-fill: white;
+    -fx-font-size: 9px;
+    -fx-min-width: 28px;
+    -fx-max-width: 28px;
+    -fx-min-height: 28px;
+    -fx-max-height: 28px;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-cursor: hand;
+    -fx-padding: 0;
+    -fx-alignment: CENTER;
+}
+.stop-btn:hover {
+    -fx-background-color: #DC3B31;
+}
+
+/* Download */
+.btn-download {
+    -fx-background-color: #111110;
+    -fx-text-fill: #F2EFE9;
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 8px;
+    -fx-font-weight: 700;
+    -fx-padding: 4 10 4 10;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-cursor: hand;
+}
+.btn-download:hover {
+    -fx-background-color: #C4261C;
+}
+
+/* Preset detail buttons */
+.btn-preset {
+    -fx-background-color: #111110;
+    -fx-text-fill: #F2EFE9;
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 10px;
+    -fx-font-weight: 700;
+    -fx-pref-height: 36px;
+    -fx-background-radius: 0;
+    -fx-cursor: hand;
+}
+.btn-preset:hover {
+    -fx-background-color: #C4261C;
+}
+
+.btn-preset-secondary {
+    -fx-background-color: transparent;
+    -fx-border-color: #111110;
+    -fx-border-width: 1;
+    -fx-text-fill: #111110;
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 10px;
+    -fx-font-weight: 700;
+    -fx-pref-height: 36px;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-cursor: hand;
+}
+.btn-preset-secondary:hover {
+    -fx-background-color: #111110;
+    -fx-text-fill: #F2EFE9;
+}
+
+/* See all link-style */
+.btn-see-all {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #9C9890;
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 9px;
+    -fx-font-weight: 700;
+    -fx-cursor: hand;
+    -fx-padding: 0;
+}
+.btn-see-all:hover {
+    -fx-text-fill: #111110;
+}
+
+/* ══════════════════════════════
+   5. FORM — LABELS & INPUTS
+══════════════════════════════ */
+.field-label {
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 8px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #9C9890;
+}
+
+.field-input {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-text-fill: #111110;
+    -fx-prompt-text-fill: #D4CFC7;
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 12px;
+    -fx-pref-height: 36px;
+    -fx-padding: 0 4px;
+    -fx-background-radius: 0;
+}
+.field-input:focused {
+    -fx-background-color: transparent;
+}
+
+.field-combo {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #111110;
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 11px;
+    -fx-pref-height: 36px;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+}
+.field-combo .list-cell {
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 11px;
+    -fx-background-color: #F2EFE9;
+    -fx-text-fill: #111110;
+    -fx-padding: 4 8 4 8;
+}
+.field-combo .list-cell:filled:hover {
+    -fx-background-color: #E8E4DD;
+}
+.field-combo .list-cell:filled:selected {
+    -fx-background-color: #111110;
+    -fx-text-fill: #F2EFE9;
+}
+
+/* ══════════════════════════════
+   6. FORM CARD (Upload)
+══════════════════════════════ */
+.page-content {
+    -fx-background-color: #F2EFE9;
+}
+
+.page-title {
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 16px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #111110;
+}
+
+.form-card {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D4CFC7;
+    -fx-border-width: 1;
+}
+
+.form-row {
+    -fx-min-height: 76px;
+    -fx-pref-height: 76px;
+}
+
+.form-field {
+    -fx-padding: 14 16 14 16;
+}
+
+.field-divider-v {
+    -fx-background-color: #D4CFC7;
+    -fx-pref-width: 1px;
+    -fx-min-width: 1px;
+    -fx-max-width: 1px;
+}
+
+.field-divider-h {
+    -fx-background-color: #D4CFC7;
+    -fx-pref-height: 1px;
+    -fx-min-height: 1px;
+    -fx-max-height: 1px;
+}
+
+/* ══════════════════════════════
+   7. DROP ZONE
+══════════════════════════════ */
+.drop-zone {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D4CFC7;
+    -fx-border-width: 1;
+    -fx-border-style: dashed;
+    -fx-cursor: hand;
+}
+.drop-zone:hover {
+    -fx-border-color: #111110;
+    -fx-background-color: #F8F6F2;
+}
+
+.drop-icon {
+    -fx-font-size: 18px;
+    -fx-text-fill: #D4CFC7;
+}
+.drop-text {
+    -fx-font-size: 11px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #6A6760;
+}
+.drop-sub {
+    -fx-font-size: 9px;
+    -fx-text-fill: #9C9890;
+}
+
+/* ══════════════════════════════
+   8. LOGIN / REGISTER
+══════════════════════════════ */
+.login-root {
+    -fx-background-color: #F2EFE9;
+}
+
+.login-card {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D4CFC7;
+    -fx-border-width: 1;
+}
+
+.login-logo {
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #111110;
+}
+
+.login-subtitle {
+    -fx-font-size: 11px;
+    -fx-text-fill: #9C9890;
+}
+
+.login-divider {
+    -fx-background-color: #D4CFC7;
+    -fx-pref-height: 1px;
+}
+
+.login-hint {
+    -fx-font-size: 10px;
+    -fx-text-fill: #9C9890;
+}
+
+.login-link {
+    -fx-font-size: 10px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #C4261C;
+    -fx-cursor: hand;
+}
+.login-link:hover {
+    -fx-text-fill: #DC3B31;
+}
+
+.error-label {
+    -fx-font-size: 10px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #C4261C;
+}
+
+/* input khusus login (punya border bawah) */
+.login-input {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #D4CFC7 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-text-fill: #111110;
+    -fx-prompt-text-fill: #D4CFC7;
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 12px;
+    -fx-pref-height: 38px;
+    -fx-padding: 0 4px;
+    -fx-background-radius: 0;
+}
+.login-input:focused {
+    -fx-border-color: transparent transparent #111110 transparent;
+    -fx-background-color: transparent;
+}
+
+/* ══════════════════════════════
+   9. PRESET CARD
+══════════════════════════════ */
+.preset-card {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D4CFC7;
+    -fx-border-width: 1;
+    -fx-padding: 14;
+    -fx-cursor: hand;
+}
+.preset-card:hover {
+    -fx-border-color: #9C9890;
+}
+
+.preset-card-new {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #C4261C #D4CFC7 #D4CFC7 #D4CFC7;
+    -fx-border-width: 2 1 1 1;
+    -fx-padding: 14;
+    -fx-cursor: hand;
+}
+.preset-card-new:hover {
+    -fx-border-color: #C4261C #9C9890 #9C9890 #9C9890;
+}
+
+.preset-name,
+.preset-title {
+    -fx-font-size: 11px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #111110;
+    -fx-wrap-text: true;
+}
+
+.preset-author {
+    -fx-font-size: 9px;
+    -fx-text-fill: #9C9890;
+}
+
+.preset-date {
+    -fx-font-size: 9px;
+    -fx-text-fill: #9C9890;
+}
+
+.preset-tags {
+    -fx-padding: 2 0 0 0;
+}
+
+.badge-new {
+    -fx-background-color: #C4261C;
+    -fx-text-fill: white;
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 8px;
+    -fx-font-weight: 700;
+    -fx-padding: 2 6 2 6;
+}
+
+/* ══════════════════════════════
+   10. TAG CHIPS
+══════════════════════════════ */
+.tag-chip,
+.tag {
+    -fx-background-color: transparent;
+    -fx-border-color: #D4CFC7;
+    -fx-border-width: 1;
+    -fx-text-fill: #6A6760;
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 8px;
+    -fx-font-weight: 700;
+    -fx-padding: 2 7 2 7;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+}
+.tag-genre {
+    -fx-background-color: transparent;
+    -fx-border-color: #1A5C3A;
+    -fx-border-width: 1;
+    -fx-text-fill: #1A5C3A;
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 8px;
+    -fx-font-weight: 700;
+    -fx-padding: 2 7 2 7;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+}
+.tag-type {
+    -fx-background-color: transparent;
+    -fx-border-color: #C4261C;
+    -fx-border-width: 1;
+    -fx-text-fill: #C4261C;
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 8px;
+    -fx-font-weight: 700;
+    -fx-padding: 2 7 2 7;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+}
+.tag-instrument {
+    -fx-background-color: transparent;
+    -fx-border-color: #1A2F5C;
+    -fx-border-width: 1;
+    -fx-text-fill: #1A2F5C;
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 8px;
+    -fx-font-weight: 700;
+    -fx-padding: 2 7 2 7;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+}
+
+/* ══════════════════════════════
+   11. AUDIO SLIDER
+══════════════════════════════ */
+.audio-slider .track {
+    -fx-background-color: #D4CFC7;
+    -fx-pref-height: 2px;
+    -fx-background-radius: 0;
+}
+.audio-slider .thumb {
+    -fx-background-color: #111110;
+    -fx-pref-width: 10px;
+    -fx-pref-height: 10px;
+    -fx-background-radius: 0;
+    -fx-effect: null;
+}
+.audio-slider .thumb:hover {
+    -fx-background-color: #C4261C;
+}
+
+.progress-slider .track {
+    -fx-background-color: rgba(255,255,255,0.20);
+    -fx-pref-height: 2px;
+    -fx-background-radius: 0;
+}
+.progress-slider .thumb {
+    -fx-background-color: #C4261C;
+    -fx-pref-width: 10px;
+    -fx-pref-height: 10px;
+    -fx-background-radius: 0;
+    -fx-effect: null;
+}
+
+/* ══════════════════════════════
+   12. AUDIO BAR (bottom)
+══════════════════════════════ */
+.audio-bar {
+    -fx-background-color: #111110;
+    -fx-border-color: #1C1B1A transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+    -fx-min-height: 50px;
+    -fx-max-height: 50px;
+    -fx-padding: 0 20px;
+}
+
+.now-playing {
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 10px;
+    -fx-text-fill: rgba(242,239,233,0.65);
+}
+
+/* ══════════════════════════════
+   13. PROFILE PAGE
+══════════════════════════════ */
+.main-content {
+    -fx-background-color: #F2EFE9;
+    -fx-padding: 28 24 32 24;
+}
+
+.profile-card {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D4CFC7;
+    -fx-border-width: 1;
+    -fx-padding: 24;
+}
+
+.profile-image-container {
+    -fx-background-color: #E8E4DD;
+    -fx-min-width: 100px;
+    -fx-max-width: 100px;
+    -fx-min-height: 100px;
+    -fx-max-height: 100px;
+    -fx-border-color: #D4CFC7;
+    -fx-border-width: 1;
+}
+
+.username-label {
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #111110;
+}
+
+.stats-row {
+    -fx-padding: 4 0 0 0;
+}
+
+.stat-box {
+    -fx-padding: 0 20 0 0;
+    -fx-border-color: transparent #D4CFC7 transparent transparent;
+    -fx-border-width: 0 1 0 0;
+}
+
+.stat-number {
+    -fx-font-size: 20px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #111110;
+}
+
+.stat-label {
+    -fx-font-size: 8px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #9C9890;
+}
+
+.section-title {
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 11px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #111110;
+    -fx-border-color: transparent transparent #111110 transparent;
+    -fx-border-width: 0 0 1.5 0;
+    -fx-padding: 0 0 10 0;
+}
+
+.preset-grid {
+    -fx-background-color: transparent;
+}
+
+/* ══════════════════════════════
+   14. PRESET DETAIL
+══════════════════════════════ */
+.detail-root {
+    -fx-background-color: #F2EFE9;
+}
+
+.center-container {
+    -fx-background-color: #F2EFE9;
+    -fx-padding: 28 24 28 24;
+}
+
+.breadcrumb {
+    -fx-padding: 0 0 6 0;
+}
+.breadcrumb-active {
+    -fx-font-size: 10px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #111110;
+}
+.breadcrumb-inactive {
+    -fx-font-size: 10px;
+    -fx-text-fill: #9C9890;
+}
+.breadcrumb-sep {
+    -fx-font-size: 10px;
+    -fx-text-fill: #D4CFC7;
+}
+
+.avatar {
+    -fx-background-color: #E8E4DD;
+    -fx-min-width: 80px;
+    -fx-max-width: 80px;
+    -fx-min-height: 80px;
+    -fx-max-height: 80px;
+    -fx-border-color: #D4CFC7;
+    -fx-border-width: 1;
+}
+
+.profile-name {
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 15px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #111110;
+}
+.profile-role {
+    -fx-font-size: 10px;
+    -fx-text-fill: #9C9890;
+}
+.profile-stats {
+    -fx-font-size: 10px;
+    -fx-text-fill: #6A6760;
+}
+
+.separator {
+    -fx-background-color: #D4CFC7;
+}
+
+/* ══════════════════════════════
+   15. SEARCH PAGE
+══════════════════════════════ */
+.search-page-root {
+    -fx-background-color: #F2EFE9;
+}
+
+.search-content {
+    -fx-background-color: #F2EFE9;
+    -fx-padding: 20 24 24 24;
+}
+
+.filter-bar {
+    -fx-padding: 0 0 4 0;
+}
+
+.search-section-title {
+    -fx-font-family: "IBM Plex Mono", monospace;
+    -fx-font-size: 11px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #111110;
+    -fx-border-color: transparent transparent #111110 transparent;
+    -fx-border-width: 0 0 1.5 0;
+    -fx-padding: 0 0 8 0;
+}
+
+/* ══════════════════════════════
+   16. CATEGORY
+══════════════════════════════ */
+.category-header {
+    -fx-border-color: transparent transparent #111110 transparent;
+    -fx-border-width: 0 0 1.5 0;
+    -fx-padding: 0 0 8 0;
+}
+.category-dot-synth  { -fx-background-color: #C4261C; }
+.category-dot-guitar { -fx-background-color: #1A5C3A; }
+.category-dot-bass   { -fx-background-color: #1A2F5C; }
+
+.category-name {
+    -fx-font-size: 11px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #111110;
+}
+.category-count {
+    -fx-font-size: 9px;
+    -fx-text-fill: #9C9890;
+}
+
+/* ══════════════════════════════
+   17. MISC
+══════════════════════════════ */
+.star-filled {
+    -fx-text-fill: #C4261C;
+    -fx-font-size: 11px;
+}
+.star-empty {
+    -fx-text-fill: #D4CFC7;
+    -fx-font-size: 11px;
+}
+.count-label {
+    -fx-font-size: 9px;
+    -fx-text-fill: #9C9890;
+}
+.content-area {
+    -fx-background-color: #F2EFE9;
+    -fx-padding: 24 20 24 20;
+}
+.actions-row {
+    -fx-background-color: #E8E4DD;
+    -fx-border-color: transparent transparent #D4CFC7 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 10px 20px;
+    -fx-min-height: 52px;
+    -fx-max-height: 52px;
+}
+
+.user-chip {
+    -fx-background-color: transparent;
+    -fx-border-color: rgba(255,255,255,0.18);
+    -fx-border-width: 1;
+    -fx-pref-height: 34px;
+    -fx-padding: 0 10px;
+    -fx-cursor: hand;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+}
+.user-chip:hover {
+    -fx-border-color: rgba(255,255,255,0.45);
+}
+.user-avatar-label {
+    -fx-text-fill: white;
+    -fx-font-size: 9px;
+    -fx-font-weight: 700;
+}

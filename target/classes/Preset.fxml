@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.sharingpresetmusik.controller.PresetController"
+            stylesheets="@css/style.css"
+            styleClass="detail-root"
+            prefWidth="800" prefHeight="500">
+
+    <center>
+        <VBox spacing="20" styleClass="center-container">
+
+            <!-- Breadcrumb -->
+            <HBox alignment="CENTER_LEFT" spacing="8" styleClass="breadcrumb">
+                <Label fx:id="categoryLabel"
+                       text="Jenis Preset"
+                       styleClass="breadcrumb-active"/>
+                <Label text="›" styleClass="breadcrumb-sep"/>
+                <Label fx:id="genreLabel"
+                       text="Genre"
+                       styleClass="breadcrumb-inactive"/>
+            </HBox>
+
+            <!-- Preset info card -->
+            <VBox spacing="16" styleClass="profile-card">
+
+                <!-- Header: avatar + info -->
+                <HBox alignment="CENTER_LEFT" spacing="20">
+
+                    <StackPane styleClass="avatar">
+                        <Label text="♪" styleClass="section-title"/>
+                    </StackPane>
+
+                    <VBox spacing="6" HBox.hgrow="ALWAYS">
+                        <Label fx:id="presetNameLabel"
+                               text="—"
+                               styleClass="profile-name"/>
+                        <Label fx:id="synthModelLabel"
+                               text="—"
+                               styleClass="profile-role"/>
+                        <Label fx:id="downloadCountLabel"
+                               text="0 downloads"
+                               styleClass="profile-stats"/>
+                    </VBox>
+
+                </HBox>
+
+                <!-- Separator -->
+                <Region styleClass="separator" minHeight="1" maxHeight="1"/>
+
+                <!-- Action buttons -->
+                <HBox alignment="CENTER" spacing="10">
+                    <Button fx:id="downloadPresetBtn"
+                            text="Download Preset"
+                            styleClass="btn-preset"
+                            maxWidth="Infinity"
+                            HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="demoPresetBtn"
+                            text="Demo Preset"
+                            styleClass="btn-preset-secondary"
+                            maxWidth="Infinity"
+                            HBox.hgrow="ALWAYS"/>
+                </HBox>
+
+                <!-- Volume control -->
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label text="VOL" styleClass="field-label"/>
+                    <Slider fx:id="volumeSlider"
+                            min="0" max="1" value="0.8"
+                            blockIncrement="0.05"
+                            styleClass="audio-slider"
+                            HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="volumeLabel"
+                           text="80%"
+                           styleClass="count-label"/>
+                </HBox>
+
+            </VBox>
+
+            <!-- Back -->
+            <Button text="← Kembali"
+                    onAction="#handleCancel"
+                    styleClass="btn-secondary"/>
+
+        </VBox>
+    </center>
+
+</BorderPane>

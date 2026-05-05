@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.sharingpresetmusik.controller.SearchPageController"
+            stylesheets="@css/style.css"
+            styleClass="search-page-root"
+            prefWidth="900" prefHeight="700">
+
+    <center>
+        <VBox spacing="0" styleClass="search-content">
+
+            <!-- Section title -->
+            <Label text="Rekomendasi Preset"
+                   styleClass="search-section-title"/>
+
+            <!-- Filter baris 1: Jenis Instrument / Synthesizer -->
+            <Label text="INSTRUMENT"
+                   styleClass="filter-label">
+                <VBox.margin><Insets top="16" bottom="4"/></VBox.margin>
+            </Label>
+            <HBox fx:id="filterInstrumentBar"
+                  spacing="8"
+                  styleClass="filter-bar">
+                <VBox.margin><Insets bottom="10"/></VBox.margin>
+            </HBox>
+
+            <!-- Filter baris 2: Format / Extension -->
+            <Label text="FORMAT"
+                   styleClass="filter-label">
+                <VBox.margin><Insets bottom="4"/></VBox.margin>
+            </Label>
+            <ScrollPane fitToHeight="true"
+                        hbarPolicy="NEVER"
+                        vbarPolicy="NEVER"
+                        styleClass="filter-scroll">
+                <HBox fx:id="filterFormatBar"
+                      spacing="8"
+                      styleClass="filter-bar">
+                    <padding><Insets bottom="2"/></padding>
+                </HBox>
+            </ScrollPane>
+
+            <VBox.margin><Insets bottom="12"/></VBox.margin>
+
+            <!-- Preset grid -->
+            <ScrollPane fitToWidth="true"
+                        styleClass="scroll-pane"
+                        VBox.vgrow="ALWAYS">
+                <FlowPane fx:id="presetGrid"
+                          hgap="16" vgap="16"
+                          styleClass="preset-grid"
+                          prefWrapLength="840"/>
+            </ScrollPane>
+
+        </VBox>
+    </center>
+
+</BorderPane>
